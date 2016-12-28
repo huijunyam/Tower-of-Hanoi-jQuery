@@ -143,7 +143,7 @@
 	    this.$el.on("click", "ul", (event) => {
 	      this.clickTower(event);
 	    });
-	    // this.render();
+	    this.render();
 	  }
 
 	  setUpTowers () {
@@ -159,27 +159,19 @@
 	  }
 
 	  render() {
-	    $("ul").remove();
-	    $("li").remove();
-	    for (let i = 0; i < this.game.towers.length; i++){
+	    this.$el.find("ul").remove();
+	    this.$el.find("li").remove();
+	    for (let towerIdx = 0; towerIdx < 3; towerIdx++){
 	      const $ul = $("<ul>");
-	      for(let j = 0; j < 3; j++){
-	        const $li = $("<li>");
-	        if (this.game.towers[i][j] === 3) {
-	          $li.addClass(`disc2`);
-	          $ul.append($li);
-	        } else if (this.game.towers[i][j] === 2) {
-	          $li.addClass(`disc1`);
-	          $ul.append($li);
-	        } else if (this.game.towers[i][j] === 1) {
-	          $li.addClass(`disc0`);
-	          $ul.append($li);
-	        } else {
-	          $ul.append($li);
-	        }
+	      let numDisc = this.game.towers[towerIdx].length;
+	      for (let discIdx = 1; discIdx <= numDisc; discIdx++){
+	        let $li = $("<li>");
+	        $li.addClass(`disc${discIdx}`);
+	        $ul.append($li);
 	      }
 	      this.$el.append($ul);
 	    }
+
 	  }
 
 	  clickTower(event) {
