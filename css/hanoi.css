@@ -1,0 +1,67 @@
+html, body, h1, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+}
+
+figure {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+  width: 200px;
+  height:200px;
+  margin: 20px;
+  border-bottom: 10px solid black;
+}
+
+ul li {
+  float: left;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cf {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+ul li.disc0 {
+  margin: 10px 60px;
+  width: 60px;
+  height: 30px;
+  border: 5px solid green;
+  border-radius: 25px;
+  background-color: green;
+
+}
+
+ul li.disc1 {
+  margin: 10px 35px;
+  width: 120px;
+  height: 30px;
+  border: 5px solid green;
+  border-radius: 25px;
+  background-color: green;
+}
+
+ul li.disc2 {
+  margin: 10px 10px;
+  width: 180px;
+  height: 30px;
+  border: 5px solid green;
+  border-radius: 25px;
+  background-color: green;
+}
