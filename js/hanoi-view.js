@@ -27,16 +27,16 @@ class HanoiView {
     this.$el.find("li").remove();
     for (let towerIdx = 0; towerIdx < 3; towerIdx++){
       const $ul = $("<ul>");
-      let numDisc = this.game.towers[towerIdx].length;
+      const numDisc = this.game.towers[towerIdx].length;
+      $ul.addClass(`numDisc${numDisc}`);
       for (let discIdx = numDisc; discIdx > 0; discIdx--){
         let $li = $("<li>");
         let disc = this.game.towers[towerIdx][discIdx - 1];
-        $li.addClass(`disc${disc}`);
-        $ul.append($li);
+          $li.addClass(`disc${disc}`);
+          $ul.append($li);
       }
       this.$el.append($ul);
     }
-
   }
 
   clickTower(event) {

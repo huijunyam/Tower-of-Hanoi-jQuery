@@ -37,6 +37,12 @@ ul {
   height:200px;
   border-bottom: 10px solid black;
   margin-right: 30px;
+  margin-bottom: 50px;
+}
+
+ul:hover {
+  background: yellow;
+  cursor: pointer;
 }
 
 .disc1, .disc2, .disc3 {
@@ -48,13 +54,27 @@ ul {
 }
 
 ul li.disc1 {
-  width: 40%;
+  width: 30%;
 }
 
 ul li.disc2 {
-  width: 70%;
+  width: 60%;
 }
 
 ul li.disc3 {
-  width: 100%;
+  width: 90%;
+}
+
+.numDisc1 li:first-child {
+  margin-top: 100px;
+}
+
+.numDisc2 li:first-child{
+  margin-top: 60px;
+}
+
+p {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 100px, auto;
 }
