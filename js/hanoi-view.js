@@ -13,14 +13,11 @@ class HanoiView {
   }
 
   setUpTowers () {
+    this.$el.addClass("cf");
     for (let i = 0; i < 3; i++) {
       const $ul = $('<ul>');
-      $ul.addClass("cf");
       for (let j = 0; j < 3; j++) {
         let $li = $('<li>');
-        if (i === 0) {
-          $li.addClass(`disc${j}`);
-        }
         $ul.append($li);
       }
       this.$el.append($ul);

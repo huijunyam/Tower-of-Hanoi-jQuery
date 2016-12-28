@@ -8,34 +8,40 @@ html, body, h1, ul, li {
   text-decoration: inherit;
 }
 
-figure {
-  display: flex;
-  justify-content: center;
-}
-
-ul {
-  list-style: none;
-  width: 200px;
-  height:200px;
-  margin: 20px;
-  border-bottom: 10px solid black;
-}
-
-ul li {
-  float: left;
-  margin: 10px;
+body {
+  font-family: sans-serif;
+  text-align: center;
 }
 
 h1 {
   font-size: 100px;
   font-weight: bold;
-  text-align: center;
+  margin-bottom: 50px;
 }
 
-.cf {
+figure {
+  margin: 0 auto;
+  width: 600px;
+}
+
+.cf:after {
   content: "";
   display: block;
   clear: both;
+}
+
+ul {
+  float: left;
+  list-style: none;
+  width: 180px;
+  height:200px;
+  border-bottom: 10px solid black;
+  margin-right: 20px;
+}
+
+/*ul li {
+  float: left;
+  margin: 10px;
 }
 
 ul li.disc0 {
@@ -64,4 +70,4 @@ ul li.disc2 {
   border: 5px solid green;
   border-radius: 25px;
   background-color: green;
-}
+}*/
