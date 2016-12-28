@@ -49,14 +49,13 @@ class HanoiView {
       }
       this.startTower = null;
     }
-
     this.render();
 
     if (this.game.isWon()) {
       const $p = $('<p>');
       this.$el.append($p);
       this.$el.off("click");
-      this.$el.addClass(`winner`);
+      $(this.$el.find("ul")[currentIdx]).addClass(`winner`);
       $p.text(`You win!`);
     }
   }

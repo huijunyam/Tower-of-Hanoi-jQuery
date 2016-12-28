@@ -78,3 +78,7 @@ p {
   font-weight: bold;
   margin: 100px, auto;
 }
+
+.winner li{
+  background-color: #90EE90;
+}
