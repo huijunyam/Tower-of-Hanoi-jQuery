@@ -4,11 +4,9 @@ class HanoiView {
   constructor(game, $el) {
     this.game = game;
     this.$el = $el;
-    this.setUpTowers();
     this.startTower = null;
-    this.$el.on("click", "ul", (event) => {
-      this.clickTower(event);
-    });
+    this.$el.on("click", "ul", this.clickTower.bind(this));
+    this.setUpTowers();
     this.render();
   }
 
@@ -30,9 +28,10 @@ class HanoiView {
     for (let towerIdx = 0; towerIdx < 3; towerIdx++){
       const $ul = $("<ul>");
       let numDisc = this.game.towers[towerIdx].length;
-      for (let discIdx = 1; discIdx <= numDisc; discIdx++){
+      for (let discIdx = numDisc; discIdx > 0; discIdx--){
         let $li = $("<li>");
-        $li.addClass(`disc${discIdx}`);
+        let disc = this.game.towers[towerIdx][discIdx - 1];
+        $li.addClass(`disc${disc}`);
         $ul.append($li);
       }
       this.$el.append($ul);
@@ -42,15 +41,13 @@ class HanoiView {
 
   clickTower(event) {
     const currentIdx = $(event.currentTarget).index();
-    console.log(currentIdx);
     if (this.startTower === null) {
       this.startTower = currentIdx;
     } else {
-      if (this.game.move(this.startTower, currentIdx)) {
-        this.startTower = null;
-      } else {
+      if (!this.game.move(this.startTower, currentIdx)) {
         alert("Invalid move!");
       }
+      this.startTower = null;
     }
 
     this.render();
@@ -63,7 +60,6 @@ class HanoiView {
       $p.text(`You win!`);
     }
   }
-
 }
 
 module.exports = HanoiView;
